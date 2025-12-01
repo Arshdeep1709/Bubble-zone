@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        main{
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .background{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(49, 135, 216);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        article{
+            width: 60%;
+            height: 70%;
+            background-color: aliceblue;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        nav{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(75, 174, 255);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .hit{
+            color: aliceblue;
+            padding-left: 50px;
+        }
+        .timer{
+            color: aliceblue;
+        }
+        .score{
+            color: aliceblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="background">
+            <article>
+                <nav>
+                    <div class="hit">
+                        <h3>Hit :</h3>
+                    </div>
+                    <div class="timer">
+                        <h3>Timer :</h3>
+                    </div>
+                    <div class="score">
+                        <h3>Score :</h3>
+                    </div>
+                </nav>
+            </article>
+        </section>
+    </main>
+    
+</body>
+</html>
