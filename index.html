@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -18,66 +18,101 @@
             width: 100%;
             height: 100%;
         }
-        main{
-            position: relative;
-            height: 100%;
-            width: 100%;
-        }
-        .background{
+
+        .main {
             width: 100%;
             height: 100%;
-            background-color: rgb(49, 135, 216);
+            background-color: rgb(67, 67, 141);
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        article{
-            width: 60%;
-            height: 70%;
+
+        .panel {
+            width: 70%;
+            height: 60%;
             background-color: aliceblue;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
         }
-        nav{
+
+        .top {
             width: 100%;
             height: 50px;
-            background-color: rgb(75, 174, 255);
+            background-color: rgb(57, 57, 97);
+            color: aliceblue;
             display: flex;
             align-items: center;
-            gap: 50px;
-        }
-        .hit{
-            color: aliceblue;
-            padding-left: 50px;
-        }
-        .timer{
-            color: aliceblue;
-        }
-        .score{
-            color: aliceblue;
+            gap: 40px;
+            padding: 20px;
         }
 
+        .hit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bottom {
+            width: 100%;
+            height: calc(100% - 50px);
+            padding: 20px;
+        }
+
+        .bubble {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: aliceblue;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(136, 76, 192);
+        }
+
+        .bubble:hover {
+            background-color: rgb(62, 0, 121);
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
-    <main>
-        <section class="background">
-            <article>
-                <nav>
-                    <div class="hit">
-                        <h3>Hit :</h3>
-                    </div>
-                    <div class="timer">
-                        <h3>Timer :</h3>
-                    </div>
-                    <div class="score">
-                        <h3>Score :</h3>
-                    </div>
-                </nav>
-            </article>
-        </section>
-    </main>
-    
+    <div class="main">
+        <div class="panel">
+            <div class="top">
+                <div class="hit">
+                    <h3>Hit :</h3>
+                    <p>5</p>
+                </div>
+                <div class="timer">
+                    <h3>Timer :</h3>
+                    <p>5</p>
+                </div>
+                <div class="score">
+                    <h3>Score :</h3>
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="bubble">5</div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
