@@ -102,7 +102,7 @@
                 </div>
                 <div class="timer">
                     <h3>Timer :</h3>
-                    <p>5</p>
+                    <p class="timerVal">60</p>
                 </div>
                 <div class="score">
                     <h3>Score :</h3>
@@ -124,6 +124,22 @@
         bubble += `<div class="bubble">${randomNum}</div>`
     }
     document.querySelector('.bottom').innerHTML = bubble
+
+    let timer = 60
+    let timerStop
+
+    function runTimer(){
+        setInterval(function(){
+            if(timer > 0){
+                timer --
+                document.querySelector('.timerVal').textContent = timer
+            }
+            else{
+                clearInterval(timerStop)
+            }
+        },1000)
+    }
+    runTimer()
 
 </script>
 </body>
