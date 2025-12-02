@@ -69,6 +69,9 @@
             width: 100%;
             height: calc(100% - 50px);
             padding: 20px;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
         }
 
         .bubble {
@@ -107,12 +110,22 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="bubble">5</div>
+                
             </div>
         </div>
     </div>
 
+<script>
 
+    let bubble = ''
+
+    for(let i=1; i<=100; i++){
+        let randomNum = Math.floor(Math.random()*10)
+        bubble += `<div class="bubble">${randomNum}</div>`
+    }
+    document.querySelector('.bottom').innerHTML = bubble
+
+</script>
 </body>
 
 </html>
