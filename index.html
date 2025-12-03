@@ -98,7 +98,7 @@
             <div class="top">
                 <div class="hit">
                     <h3>Hit :</h3>
-                    <p>5</p>
+                    <p class="hitVal">5</p>
                 </div>
                 <div class="timer">
                     <h3>Timer :</h3>
@@ -116,6 +116,7 @@
     </div>
 
 <script>
+    
 
     let bubble = ''
 
@@ -140,6 +141,12 @@
         },1000)
     }
     runTimer()
+
+    function hit(){
+        let randomNum = Math.floor(Math.random()*10)
+        document.querySelector('.hitVal').textContent = randomNum
+    }
+    hit()
 
 </script>
 </body>
