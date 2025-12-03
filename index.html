@@ -70,6 +70,8 @@
             height: calc(100% - 50px);
             padding: 20px;
             display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 5px;
             flex-wrap: wrap;
         }
@@ -106,49 +108,71 @@
                 </div>
                 <div class="score">
                     <h3>Score :</h3>
-                    <p>5</p>
+                    <p class="scoreVal">0</p>
                 </div>
             </div>
             <div class="bottom">
-                
+
             </div>
         </div>
     </div>
 
-<script>
-    
+    <script>
 
-    let bubble = ''
+        function makeBubble() {
+            let bubble = ''
 
-    for(let i=1; i<=100; i++){
-        let randomNum = Math.floor(Math.random()*10)
-        bubble += `<div class="bubble">${randomNum}</div>`
-    }
-    document.querySelector('.bottom').innerHTML = bubble
-
-    let timer = 60
-    let timerStop
-
-    function runTimer(){
-        setInterval(function(){
-            if(timer > 0){
-                timer --
-                document.querySelector('.timerVal').textContent = timer
+            for (let i = 1; i <= 100; i++) {
+                let randomNum = Math.floor(Math.random() * 10)
+                bubble += `<div class="bubble">${randomNum}</div>`
             }
-            else{
-                clearInterval(timerStop)
+            document.querySelector('.bottom').innerHTML = bubble
+        }
+        makeBubble()
+
+
+        let timer = 60
+        let timerStop
+
+        function runTimer() {
+            setInterval(function () {
+                if (timer > 0) {
+                    timer--
+                    document.querySelector('.timerVal').textContent = timer
+                }
+                else {
+                    clearInterval(timerStop)
+                    document.querySelector('.bottom').innerHTML = `<h1> Game Over </h1>`
+                }
+            }, 1000)
+        }
+        runTimer()
+
+        let hitRn
+
+        function hit() {
+            hitRn = Math.floor(Math.random() * 10)
+            document.querySelector('.hitVal').textContent = hitRn
+        }
+        hit()
+
+        let score = 0
+
+        function increaseScore() {
+            score += 10
+            document.querySelector('.scoreVal').textContent = score
+        }
+
+
+        document.querySelector('.bottom').addEventListener('click', function (e) {
+            let clickedNum = Number(e.target.textContent)
+            if (clickedNum === hitRn) {
+                increaseScore()
+                makeBubble()
+                hit()
             }
-        },1000)
-    }
-    runTimer()
-
-    function hit(){
-        let randomNum = Math.floor(Math.random()*10)
-        document.querySelector('.hitVal').textContent = randomNum
-    }
-    hit()
-
-</script>
+        })
+    </script>
 </body>
 
 </html>
